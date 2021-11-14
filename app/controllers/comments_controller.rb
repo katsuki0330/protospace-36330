@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     else
       @prototype = Comment.new(comment_params).prototype
       @comment = Comment.new(comment_params)
-      render :"prototypes/show"
+      @comments = @prototype.comments
+      render "prototypes/show"
     end  
   end
   
